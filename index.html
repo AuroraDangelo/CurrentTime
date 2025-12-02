@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" ,content="width=device-width,initial-scale=1.0">
+        <title>Current time </title>
+        <style>
+            .body
+            {
+                background:linear-gradient(black,rgb(45, 41, 41),gray);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+            .para
+            {
+                font-size: 4vh;
+                color:white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin:30px;
+                padding: 20px;
+                height: 200px;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body class="body">
+        <p class="para">CURRENT TIME</p>
+        <p class="para" id="time"></p>
+        <script>
+            function showtime()
+            {
+                const now=new Date();
+                const currtime=now.toLocaleTimeString();
+                document.querySelector("#time").innerHTML=currtime;
+            }
+            setInterval(showtime,1000);
+            showtime();
+        </script>
+    </body>
+</html>
